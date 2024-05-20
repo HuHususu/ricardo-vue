@@ -68,14 +68,19 @@
             },
 
             // 监视的数据肯定是存在的，而且是可变化的
-            watch:{
-                firstName:{
+            watch: {
+                firstName: {
                     // 这个对象是一个配置对象
-
+                    handler(newValue, oldValue) {
+                        console.log('firstName发生了变化', newValue, oldValue)
+                    },
+                    immediate: true,// 立即执行
+                    deep: true// 深度监听
                 },
-                lastName:{
+                lastName: {
 
                 }
+
             }
         })
     </script>
